@@ -23,40 +23,7 @@ print("weights: ",weight_vec,"input: ",input_vec)
 # This a Maxpool 2d implementation i.e. it does not pool across depth
 
 
-"""
-def convolve(i,j,kernel_size=ks,stride=st,input_vector=input_vec,weight_vector=weight_vec):
-  if ((input_vector.shape[0]-weight_vector.shape[0])/stride)-int((input_vector.shape[0]-weight_vector.shape[0])/stride)>0:
-    input_vector=np.pad(input_vector,((0,1),(0,1)),'edge')
-  output_slice_size=np.array([np.ceil((input_vector.shape[0]-weight_vector.shape[0])/stride)+1,np.ceil((input_vector.shape[1]-weight_vector.shape[1])/stride)+1],np.int32)
- #output_slice_size.astype(int,copy=False)
-  print(output_slice_size,np.shape(input_vector))
-  output=np.zeros([output_slice_size[0],output_slice_size[1]])
-  next_layer=np.zeros_like(output)
-  k=i.astype(int,copy=True)
-  l=j.astype(int,copy=True)
-  #print(k," ",l)
-  n=(i*stride).astype(int,copy=True)
-  m=(j*stride).astype(int,copy=True)
-  n1=n+2
-  m1=m+2
-  #print(l.dtype)
-  #print(k.dtype)
- #print(n1,' ',m1)
-  print(input_vector[n:n1,m:m1])
 
-  if(np.array_equal(input_vector[n,m],input_vector[:8,:8])):
-    print('yes')
-
- #output[k,l]=(weight_vector*input_vector[n:n+weight_vector.shape[0],m:m+weight_vector.shape[1]]).sum()    
-
-
-  print('output shape :',np.shape(output),'output :',output)
-  return output
-
-np.fromfunction(convolve,(8,8))
-
-
-"""
 default_output_shape = np.array(
     [((input_vec.shape[2] - weight_vec.shape[0]) / st) + 1, ((input_vec.shape[3] - weight_vec.shape[1]) / st) + 1])
 
