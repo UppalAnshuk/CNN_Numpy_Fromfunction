@@ -1,2 +1,4 @@
 # CNN_Numpy_Fromfunction
 Implementation of Convolutional Neural Networks in Numpy without the use of for loops(FromFunction) for iterating through input and kernels. The work also includes backpropogating through the network and even training on a real dataset like MNIST
+
+The fromfunction implementation is basically unrolled convolutions and im2col function in matlab provides and overview of how one can avoid use of for loops for convolution. Sample network is in CNN_np.py. The backprop only works for the specified network and is not plug and play like state of the art libraries. Convolution.py includes the convolving code and backprop.py has the backpropogation code. CNN_np.py also includes import the MNIST dataset using the torchvision libraries and then converting all the tensors being fed into the network by the simple function on torch.tensor objects numpy() which converts them into numpy data types for going through the network. 
